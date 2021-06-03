@@ -1,0 +1,42 @@
+{%extends "layout.html"%}
+{% block content %}
+<script>
+
+  updateList = function () {
+    var input = document.getElementById('file');
+    var output = document.getElementById('fileList');
+    
+    var children = "";
+    if (input.files.length == 0) {
+      output.innerHTML = "No files selected";
+    } else {
+      for (var i = 0; i < input.files.length; ++i) {
+        children += '<li>' + input.files.item(i).name + '</li>';
+      }
+      output.innerHTML = '<ul>' + children + '</ul>';
+      var btn = document.getElementById("submit");
+      btn.disabled = false;
+    }
+
+
+  }
+
+</script>
+
+<div class="center">
+  <title>Image to Pdf converter</title>
+  <h1>Convert your images to pdf</h1>
+  <h4>It make some time to process if you upload more than 5 images</h4>
+  <form action="" method=post enctype=multipart/form-data>
+    <div class="upload-btn-wrapper">
+      <button class="btn btn-secondary btn-lg">Upload a file</button>
+      <input type="file" name="file" multiple accept="image/*" id="file" onchange="javascript:updateList()" />
+    </div>
+    <p>Selected files:</p>
+    <div id="fileList"></div>
+    <input class="btn btn-primary btn-lg" disabled type=submit id="submit" value=Convert>
+  </form>
+
+</div>
+
+{%endblock%}

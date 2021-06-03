@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #060;
+  }
+  
+  /*
+   * Formatting the header area
+   */
+  
+  header {
+    background-color: #0cca98;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  header h1.logo {
+    font-size: 55px;
+    color: white;
+  }
+  
+  header h1.logo:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /*
+   * Center the body content
+   */
+  
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    margin: 20px;
+  }
+  div.home {
+    padding: 10px 0 30px 0;
+    background-color: #E6E6FA;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+  
+  div.about {
+    padding: 10px 0 30px 0;
+    background-color: #E6E6FA;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+  
+  h2 {
+    font-size: 3em;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+  
+  h3 {
+    font-size: 1.7em;
+    font-weight: 100;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #999;
+  }
+  
+  .menu {
+    float: right;
+    margin-top: 8px;
+  }
+  
+  .menu li {
+    display: inline;
+  }
+  
+  .menu li + li {
+    margin-left: 35px;
+  }
+  
+  .menu li a {
+    color: #444;
+    text-decoration: none;
+  }
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .button {
+    background-color: #0cca98; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+    margin-left: 30px;
+  }
+  .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  /* Style the footer */
+footer {
+  background-color: #0cca98;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  position : absolute;
+  bottom : 0;
+}
+@media screen and (max-width: 870px) {
+  .header .h1.logo {
+     width: 30px;
+  }
+  .footer {
+     float: none;
+     width: 100%;
+  }
+}
