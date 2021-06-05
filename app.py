@@ -3,6 +3,7 @@ import uuid
 from PIL import Image
 from werkzeug.utils import secure_filename
 from flask import Flask,flash,request,redirect,send_file,render_template
+from pytube import YouTube
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'uploads/')
@@ -40,8 +41,19 @@ def download_file(filename):
 def return_files_tut(filename):
     file_path = UPLOAD_FOLDER + filename
     return send_file(file_path, as_attachment=True, attachment_filename='')
-@app.route("/about", methods = ['GET'])
-def about():
+    # return render_template('/')
+@app.route("/youtube", methods=['GET', 'POST'])
+def youtube():
+    filename = str(uuid.uuid1())
+    if request.method == 'POST':
+        yurl=request.form["search"]
+        yt = YouTube(yurl)
+        yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download(UPLOAD_FOLDER,filename)
+        return redirect('/downloadfile/'+ filename+".mp4")
     return render_template('about.html')
+@app.route("/contact", methods=['GET', 'POST'])
+def newtool():
+    
+    return render_template('contact.html')
 if __name__ == "__main__":
     app.run(debug=True)

@@ -11,32 +11,36 @@
       output.innerHTML = "No files selected";
     } else {
       for (var i = 0; i < input.files.length; ++i) {
-        children += '<li>' + input.files.item(i).name + '</li>';
+        children += '<li>'+ input.files.item(i).name +'</li>';
       }
-      output.innerHTML = '<ul>' + children + '</ul>';
+      output.innerHTML =children;
       var btn = document.getElementById("submit");
       btn.disabled = false;
     }
-
-
   }
-
+//   function download() {
+//   var x = document.getElementById("download");
+  
+//     x.disabled = false
+  
+// }
 </script>
 
-<div class="center">
+<div class="container-fluid bg-2 text-center">
   <title>Image to Pdf converter</title>
-  <h1>Convert your images to pdf</h1>
-  <h4>It make some time to process if you upload more than 5 images</h4>
+  <h2>PDF conversion became east and FREE !!</h1>
+  <!-- <h4>It make some time to process if you upload more than 5 images</h4> -->
+
   <form action="" method=post enctype=multipart/form-data>
     <div class="upload-btn-wrapper">
       <button class="btn btn-secondary btn-lg">Upload a file</button>
-      <input type="file" name="file" multiple accept="image/*" id="file" onchange="javascript:updateList()" />
+      <input type="file" name="file" multiple accept="image/*" id="file" required onchange="javascript:updateList()" />
     </div>
     <p>Selected files:</p>
     <div id="fileList"></div>
-    <input class="btn btn-primary btn-lg" disabled type=submit id="submit" value=Convert>
+    <input class="btn btn-primary btn-lg"  type=submit id="submit" value="Convert to PDF">
   </form>
-
 </div>
+
 
 {%endblock%}

@@ -1,27 +1,30 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(52, 235, 165);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #060;
+    color: rgb(255, 255, 255);
   }
-  
+  .progressbar {
+    display: none;
+  }
   /*
    * Formatting the header area
    */
-  
+
   header {
-    background-color: #0cca98;
-    padding: 10px;
-    text-align: center;
+    background-color: #ffffff;
+    padding: 55px;
+
   }
   
   header h1.logo {
     font-size: 55px;
-    color: white;
+    color: #0cca98;
   }
   
   header h1.logo:hover {
-    color: #fff;
+    color: #0aa97e;
     text-decoration: none;
   }
   
@@ -49,17 +52,15 @@ body {
   
   div.about {
     padding: 10px 0 30px 0;
-    background-color: #E6E6FA;
     -webkit-border-radius: 6px;
        -moz-border-radius: 6px;
             border-radius: 6px;
   }
-  
   h2 {
-    font-size: 3em;
+    font-size: 2em;
     margin-top: 40px;
     text-align: center;
-    letter-spacing: -2px;
+    letter-spacing: 0px;
   }
   
   h3 {
@@ -81,7 +82,7 @@ body {
   }
   
   .menu li + li {
-    margin-left: 35px;
+    margin-left: 5px;
   }
   
   .menu li a {
@@ -133,10 +134,10 @@ body {
 
   /* Style the footer */
 footer {
-  background-color: #0cca98;
+  background-color: #ffffff;
   padding: 10px;
   text-align: center;
-  color: white;
+  color: #0cca98;
   width: 100%;
   position : absolute;
   bottom : 0;
@@ -150,3 +151,18 @@ footer {
      width: 100%;
   }
 }
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
