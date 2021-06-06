@@ -4,6 +4,7 @@ from PIL import Image
 from werkzeug.utils import secure_filename
 from flask import Flask,flash,request,redirect,send_file,render_template
 from pytube import YouTube
+import pikepdf
 
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'uploads/')
@@ -38,6 +39,26 @@ def upload_file():
         im1.save(UPLOAD_FOLDER+filename,save_all=True, append_images=imagelist)
         return redirect('/downloadfile/'+ filename)
     return render_template('upload_file.html')
+
+@app.route('/password', methods=['GET', 'POST'])
+def pdf_password():
+    sessionId = uuid.uuid1()
+    if request.method == 'POST' and 'file' in request.files:
+        usr_password=request.form["password"]
+        for file in request.files.getlist('file'):
+            filename = secure_filename(file.filename)
+            
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+            # filename=filename.replace("_", " ")
+            
+        pdf = pikepdf.open(UPLOAD_FOLDER + filename,password=usr_password)
+    
+        #send file name as parameter to downlad
+        filename=str(sessionId)+".pdf"
+        pdf.save(UPLOAD_FOLDER+filename)
+        return redirect('/downloadfile/'+ filename)
+    return render_template('password.html')
+
 # Download API
 @app.route("/downloadfile/<filename>", methods = ['GET'])
 def download_file(filename):
