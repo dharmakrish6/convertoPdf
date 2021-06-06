@@ -14,7 +14,7 @@ body {
 
   header {
     background-color: #ffffff;
-    padding: 55px;
+    padding: 30px;
 
   }
   
@@ -166,6 +166,13 @@ and (max-device-width : 823px) {
     font-size: 20px;
 
   }
+  .fa-1x {
+    font-size: 1.5rem;
+    left: 0;
+    }
+    .navbar-toggler.toggler-example {
+    cursor: pointer;
+    }
 }
 
 .fa {
