@@ -49,7 +49,7 @@ def pdf_password():
             filename = secure_filename(file.filename)
             
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-            # filename=filename.replace("_", " ")
+            filename=filename.replace("_", " ")
             
         pdf = pikepdf.open(UPLOAD_FOLDER + filename,password=usr_password)
     
