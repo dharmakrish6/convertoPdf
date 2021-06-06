@@ -11,6 +11,11 @@ UPLOAD_FOLDER = os.path.join(APP_ROOT, 'uploads/')
 #app = Flask(__name__)
 app = Flask(__name__, template_folder='templates')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#error handling
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('error.html'), 404
 # Upload API
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
@@ -36,7 +41,7 @@ def upload_file():
 # Download API
 @app.route("/downloadfile/<filename>", methods = ['GET'])
 def download_file(filename):
-    
+
     return render_template('download.html',value=filename)
 @app.route('/return-files/<filename>')
 def return_files_tut(filename):
