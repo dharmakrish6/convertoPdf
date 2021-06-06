@@ -150,6 +150,7 @@ and (min-device-width : 280px)
 and (max-device-width : 823px) { 
   header{
     width: auto;
+    padding: 0px;
   }
   .container{
   width: auto;
