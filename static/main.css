@@ -91,6 +91,9 @@ body {
     color: #444;
     text-decoration: none;
   }
+  .nav-link {
+    font-size: 20px;
+  }
   .upload-btn-wrapper {
     position: relative;
     overflow: hidden;
@@ -176,7 +179,6 @@ and (max-device-width : 823px) {
 }
 
 .fa {
-  padding: 20px;
   font-size: 30px;
   width: 50px;
   text-align: center;
