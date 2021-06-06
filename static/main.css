@@ -35,6 +35,8 @@ body {
   .container {
     width: 1200px;
     margin: 0 auto;
+    position: relative;
+    min-height: 250vh;
   }
   .center {
     margin: auto;
@@ -101,8 +103,9 @@ body {
     color: gray;
     background-color: white;
     padding: 8px 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 20px;
+    margin-top: 20px;
     font-weight: bold;
   }
   .button {
@@ -139,16 +142,23 @@ footer {
   text-align: center;
   color: #0cca98;
   width: 100%;
-  position : absolute;
+  position : fixed;
   bottom : 0;
 }
-@media screen and (max-width: 870px) {
-  .header .h1.logo {
-     width: 30px;
+@media only screen
+and (min-device-width : 280px) 
+and (max-device-width : 823px) { 
+  header{
+    width: auto;
   }
-  .footer {
-     float: none;
-     width: 100%;
+  .container{
+  width: auto;
+  position: relative;
+  min-height: 250vh;
+  }
+  footer{
+    bottom: 0;
+    position: fixed;
   }
 }
 
