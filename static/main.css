@@ -163,7 +163,7 @@ and (max-device-width : 823px) {
   footer{
     bottom: 0;
     position: fixed;
-    padding: 0px;
+    padding: 5px;
   }
   .fa {
     font-size: 20px;
