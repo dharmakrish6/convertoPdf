@@ -1,21 +1,22 @@
 {%extends "layout.html"%}
 {% block content %}
 
-<div class="about">
-    <form action="" method="POST">
-      <input class="form-control form-control-lg" name="search" type="text" placeholder="Search" aria-label="Search" type="url" required>
+<div class="container-fluid bg-2 text-center">
+  <form action="" method="POST">
+    <input class="form-control form-control-lg" name="search" style="margin-top: 25px;" type="text"
+      placeholder="https://www.youtube.com/watch?v=_a-gbqAzHOM&t=52s" aria-label="Search" type="url" required>
 
-      <button class="btn btn-primary" style="margin-top: 25px;" type="submit" id="submit">
+    <button class="btn btn-primary" style="margin-top: 25px;" type="submit" id="submit">
       <span class="spinner-border spinner-border-sm">Convert to Video</span></button>
-      <p>Please add valid youtube url to avoid error.</p>
-      
-    </form>
-    <!-- <div class="alert alert-warning alert-dismissible fade show">
+
+
+  </form>
+  <!-- <div class="alert alert-warning alert-dismissible fade show">
       <button type="button" class="close" disabled data-dismiss="alert">&times;</button>
       <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
     </div> -->
 
-  </div>
-  </div>
+</div>
+</div>
 
 {%endblock%}
